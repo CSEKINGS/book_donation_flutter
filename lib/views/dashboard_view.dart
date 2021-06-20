@@ -1,3 +1,5 @@
+import 'package:book_donation/views/widgets/book_selection_container.dart';
+import 'package:book_donation/views/widgets/donation_or_sell_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +15,7 @@ class _DashboardViewState extends State<DashboardView> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      backgroundColor: Color(0xFFEFFFF4),
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
@@ -41,38 +44,33 @@ class BookSelection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 100.0,
-              width: 180.0,
-              decoration: BoxDecoration(
-                  color: Colors.lightBlue,
-                  borderRadius: BorderRadius.circular(20.0)),
+            BookSelectionContainer(
+              containerColor: Color(0xFF7ED9EE),
+              containerText: 'Magazine',
+              containerTextColor: Color(0xFF1B75A1),
             ),
-            Container(
-              height: 100.0,
-              width: 180.0,
-              decoration: BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.circular(20.0)),
+            BookSelectionContainer(
+              containerText: 'College',
+              containerColor: Color(0xFFFFC8B8),
+              containerTextColor: Color(0xFF9C5040),
             ),
           ],
+        ),
+        SizedBox(
+          height: 10.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 100.0,
-              width: 180.0,
-              decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(20.0)),
+            BookSelectionContainer(
+              containerText: 'Material',
+              containerColor: Color(0xFF7EC893),
+              containerTextColor: Color(0xFF388C4E),
             ),
-            Container(
-              height: 100.0,
-              width: 180.0,
-              decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.circular(20.0)),
+            BookSelectionContainer(
+              containerText: 'Paper',
+              containerColor: Color(0xFF757575),
+              containerTextColor: Color(0xFF424242),
             ),
           ],
         ),
@@ -108,20 +106,15 @@ class DonationOrSell extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.yellow, borderRadius: BorderRadius.circular(20.0)),
-          height: 200.0,
-          width: 150.0,
-          child: Center(child: Text('Donation')),
+        DonationOrSellContainer(
+          containerText: 'Donation',
+          containerColor: Color(0xFFFFE540),
+          containerTextColor: Color(0xFFCCA434),
         ),
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.lightBlue,
-              borderRadius: BorderRadius.circular(20.0)),
-          height: 200.0,
-          width: 150.0,
-          child: Center(child: Text('Selling Books')),
+        DonationOrSellContainer(
+          containerText: 'Selling Books',
+          containerColor: Color(0xFF89C8FE),
+          containerTextColor: Color(0xFF5F8BB1),
         ),
       ],
     );
