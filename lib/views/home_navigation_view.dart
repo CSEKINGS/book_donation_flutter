@@ -3,16 +3,16 @@ import 'package:book_donation/views/map_view.dart';
 import 'package:book_donation/views/settings_view.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatefulWidget {
-  HomeView({Key key}) : super(key: key);
+class HomeNavigationView extends StatefulWidget {
+  HomeNavigationView({Key key}) : super(key: key);
 
   @override
-  _HomeViewState createState() => _HomeViewState();
+  _HomeNavigationViewState createState() => _HomeNavigationViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeNavigationViewState extends State<HomeNavigationView> {
   int _currentIndex = 0;
-  List<Widget> _children = [
+  final List<Widget> _children = [
     DashboardView(),
     MapView(),
     SettingsView(),
@@ -32,15 +32,15 @@ class _HomeViewState extends State<HomeView> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: 'Dashboard',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.map_outlined),
             label: 'Map',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.settings_applications_outlined),
             label: 'Settings',
           ),

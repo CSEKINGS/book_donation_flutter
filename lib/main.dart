@@ -1,4 +1,4 @@
-import 'package:book_donation/views/home_view.dart';
+import 'package:book_donation/views/home_navigation_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,8 +6,8 @@ void main() {
   runApp(MyApp());
 }
 
+/// This widget is the root of your application.
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      home: HomeNavigationView(),
     );
   }
 }

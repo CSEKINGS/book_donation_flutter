@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class DonationOrSellContainer extends StatelessWidget {
   const DonationOrSellContainer({
     Key key,
-    this.containerText,
-    this.containerColor,
-    this.containerTextColor,
+    @required this.containerText,
+    @required this.containerColor,
+    @required this.containerTextColor,
   }) : super(key: key);
 
   final String containerText;
@@ -17,15 +17,14 @@ class DonationOrSellContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: this.containerColor,
-          borderRadius: BorderRadius.circular(20.0)),
+          color: containerColor, borderRadius: BorderRadius.circular(20.0)),
       height: 200.0,
       width: 170.0,
       child: Center(
           child: Text(
-        this.containerText,
+        containerText,
         style: TextStyle(
-            color: this.containerTextColor,
+            color: containerTextColor,
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
       )),

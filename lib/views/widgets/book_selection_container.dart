@@ -19,13 +19,12 @@ class BookSelectionContainer extends StatelessWidget {
       height: 100.0,
       width: 170.0,
       decoration: BoxDecoration(
-          color: this.containerColor,
-          borderRadius: BorderRadius.circular(20.0)),
+          color: containerColor, borderRadius: BorderRadius.circular(20.0)),
       child: Center(
         child: Text(
-          this.containerText,
+          containerText,
           style: TextStyle(
-              color: this.containerTextColor,
+              color: containerTextColor,
               fontSize: 20.0,
               fontWeight: FontWeight.bold),
         ),
