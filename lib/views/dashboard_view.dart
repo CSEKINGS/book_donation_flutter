@@ -3,8 +3,10 @@ import 'package:book_donation/views/widgets/donation_or_sell_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// Dashboard page which shows buy and sell widgets and book category widget
 class DashboardView extends StatefulWidget {
-  DashboardView({Key key}) : super(key: key);
+  /// default constructor
+  const DashboardView({Key key}) : super(key: key);
 
   @override
   _DashboardViewState createState() => _DashboardViewState();
@@ -22,9 +24,9 @@ class _DashboardViewState extends State<DashboardView> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const TopBar(),
-            DonationOrSell(),
-            BookSelectionText(),
-            BookSelection(),
+            const DonationOrSell(),
+            const BookSelectionText(),
+            const BookSelection(),
           ],
         ),
       ),
@@ -32,7 +34,10 @@ class _DashboardViewState extends State<DashboardView> {
   }
 }
 
+/// this is the top widget of the dashboard
+/// which shows a welcome text and profile icon
 class TopBar extends StatelessWidget {
+  /// default constructor
   const TopBar({
     Key key,
   }) : super(key: key);
@@ -55,7 +60,9 @@ class TopBar extends StatelessWidget {
   }
 }
 
+/// this is the donation or sell widget you can find below the top bar
 class DonationOrSell extends StatelessWidget {
+  /// default constructor
   const DonationOrSell({
     Key key,
   }) : super(key: key);
@@ -80,7 +87,9 @@ class DonationOrSell extends StatelessWidget {
   }
 }
 
+/// this is the text you see above the book category selection widget
 class BookSelectionText extends StatelessWidget {
+  /// default constructor
   const BookSelectionText({
     Key key,
   }) : super(key: key);
@@ -97,7 +106,9 @@ class BookSelectionText extends StatelessWidget {
   }
 }
 
+/// this is the bottom most widget in the dashboard
 class BookSelection extends StatelessWidget {
+  /// default constructor
   const BookSelection({
     Key key,
   }) : super(key: key);

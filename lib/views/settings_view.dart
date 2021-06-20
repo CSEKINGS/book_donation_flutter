@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// Settings page
 class SettingsView extends StatefulWidget {
-  SettingsView({Key key}) : super(key: key);
+  /// default constructor
+  const SettingsView({Key key}) : super(key: key);
 
   @override
   _SettingsViewState createState() => _SettingsViewState();
@@ -10,6 +12,9 @@ class SettingsView extends StatefulWidget {
 class _SettingsViewState extends State<SettingsView> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+        child: Scaffold(
+      body: Container(),
+    ));
   }
 }

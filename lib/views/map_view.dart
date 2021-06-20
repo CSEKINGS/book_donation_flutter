@@ -3,11 +3,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+/// Map page
 class MapView extends StatefulWidget {
+  /// default constructor
+  const MapView({Key key}) : super(key: key);
   @override
   State<MapView> createState() => MapViewState();
 }
 
+/// Mapview state
 class MapViewState extends State<MapView> {
   final Completer<GoogleMapController> _controller = Completer();
 

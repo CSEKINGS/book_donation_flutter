@@ -3,8 +3,11 @@ import 'package:book_donation/views/map_view.dart';
 import 'package:book_donation/views/settings_view.dart';
 import 'package:flutter/material.dart';
 
+/// The first screen of the app after login.
+/// This shows a navigation bar to navigate to other screen
 class HomeNavigationView extends StatefulWidget {
-  HomeNavigationView({Key key}) : super(key: key);
+  /// default constructor
+  const HomeNavigationView({Key key}) : super(key: key);
 
   @override
   _HomeNavigationViewState createState() => _HomeNavigationViewState();
@@ -13,9 +16,9 @@ class HomeNavigationView extends StatefulWidget {
 class _HomeNavigationViewState extends State<HomeNavigationView> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    DashboardView(),
-    MapView(),
-    SettingsView(),
+    const DashboardView(),
+    const MapView(),
+    const SettingsView(),
   ];
 
   void onTabTapped(int index) {

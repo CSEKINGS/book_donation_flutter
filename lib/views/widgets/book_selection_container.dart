@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// Book category selection widget
 class BookSelectionContainer extends StatelessWidget {
+  /// we pass container text, container color and container text color
+  /// to extract the widget to follow the DRY principle
   const BookSelectionContainer({
     Key key,
     @required this.containerText,
@@ -9,8 +12,13 @@ class BookSelectionContainer extends StatelessWidget {
     @required this.containerTextColor,
   }) : super(key: key);
 
+  /// text which shows in the middle of the donation or sell widget
   final String containerText;
+
+  /// color of the container
   final Color containerColor;
+
+  /// color of the text which shows up in the middle of the container
   final Color containerTextColor;
 
   @override
