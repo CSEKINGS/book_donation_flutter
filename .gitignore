@@ -24,10 +24,8 @@ doc/api/
 .flutter-plugins
 .flutter-plugins-dependencies
 .fvm/
-.packages
 .pub-cache/
 .pub/
-build/
 coverage/
 lib/generated_plugin_registrant.dart
 
