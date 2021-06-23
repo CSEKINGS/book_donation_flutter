@@ -1,6 +1,11 @@
+import 'package:book_donation/utils/theme/theme_notifier.dart';
+import 'package:book_donation/utils/theme/theme_shared_pref.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:book_donation/utils/theme/theme.dart';
 
-/// Settings page
+/// settings view which contains theme and other settings
 class SettingsView extends StatefulWidget {
   /// default constructor
   const SettingsView({Key key}) : super(key: key);
@@ -10,11 +15,31 @@ class SettingsView extends StatefulWidget {
 }
 
 class _SettingsViewState extends State<SettingsView> {
+  var _darkTheme = false;
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    _darkTheme = (themeNotifier.getTheme() == darkTheme);
     return SafeArea(
-        child: Scaffold(
-      body: Container(),
-    ));
+      child: Scaffold(
+          body: Column(
+        children: [
+          ListTile(
+            leading: Icon(Icons.brush),
+            title: Text('Theme'),
+            contentPadding: const EdgeInsets.all(16.0),
+            trailing: DayNightSwitcher(
+              isDarkModeEnabled: _darkTheme,
+              onStateChanged: (val) {
+                setState(() {
+                  _darkTheme = val;
+                });
+                onThemeChanged(val, themeNotifier);
+              },
+            ),
+          ),
+        ],
+      )),
+    );
   }
 }

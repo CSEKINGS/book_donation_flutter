@@ -1,6 +1,6 @@
 import 'package:book_donation/views/dashboard_view.dart';
 import 'package:book_donation/views/map_view.dart';
-import 'package:book_donation/views/settings_view.dart';
+import 'package:book_donation/views/miscellaneous_view.dart';
 import 'package:flutter/material.dart';
 
 /// The first screen of the app after login.
@@ -18,7 +18,7 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
   final List<Widget> _children = [
     const DashboardView(),
     const MapView(),
-    const SettingsView(),
+    const MiscellaneousView(),
   ];
 
   void onTabTapped(int index) {
@@ -32,19 +32,27 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
-        items: const[
-           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+            ),
             label: 'Dashboard',
           ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.map_outlined),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.map_outlined,
+            ),
             label: 'Map',
           ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_applications_outlined),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.settings_applications_outlined,
+            ),
             label: 'Settings',
           ),
         ],

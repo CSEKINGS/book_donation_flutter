@@ -17,16 +17,15 @@ class _DashboardViewState extends State<DashboardView> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: const Color(0xFFEFFFF4),
       body: Container(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:const [
-             TopBar(),
-             DonationOrSell(),
-             BookSelectionText(),
-             BookSelection(),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            TopBar(),
+            DonationOrSell(),
+            BookSelectionText(),
+            BookSelection(),
           ],
         ),
       ),
@@ -79,8 +78,8 @@ class DonationOrSell extends StatelessWidget {
         ),
         DonationOrSellContainer(
           containerText: 'Selling Books',
-          containerColor: Color(0xFF89C8FE),
-          containerTextColor: Color(0xFF5F8BB1),
+          containerColor: Color(0xFFECEFFE),
+          containerTextColor: Color(0xFF617BF3),
         ),
       ],
     );
