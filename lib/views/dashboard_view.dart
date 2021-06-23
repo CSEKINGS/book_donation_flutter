@@ -22,11 +22,11 @@ class _DashboardViewState extends State<DashboardView> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const TopBar(),
-            const DonationOrSell(),
-            const BookSelectionText(),
-            const BookSelection(),
+          children:const [
+             TopBar(),
+             DonationOrSell(),
+             BookSelectionText(),
+             BookSelection(),
           ],
         ),
       ),
@@ -49,9 +49,9 @@ class TopBar extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Halo, Harish'),
-            const Text('We wish you have a good day ')
+          children: const [
+            Text('Halo, Harish'),
+            Text('We wish you have a good day ')
           ],
         ),
         const CircleAvatar(),
@@ -71,13 +71,13 @@ class DonationOrSell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const DonationOrSellContainer(
+      children: const [
+        DonationOrSellContainer(
           containerText: 'Donation',
           containerColor: Color(0xFFFFE540),
           containerTextColor: Color(0xFFCCA434),
         ),
-        const DonationOrSellContainer(
+        DonationOrSellContainer(
           containerText: 'Selling Books',
           containerColor: Color(0xFF89C8FE),
           containerTextColor: Color(0xFF5F8BB1),
@@ -98,9 +98,9 @@ class BookSelectionText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Text('Book Selection'),
-        const Text('See all'),
+      children: const [
+        Text('Book Selection'),
+        Text('See all'),
       ],
     );
   }
@@ -119,31 +119,31 @@ class BookSelection extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const BookSelectionContainer(
+          children: const [
+            BookSelectionContainer(
               containerColor: Color(0xFF7ED9EE),
               containerText: 'Magazine',
               containerTextColor: Color(0xFF1B75A1),
             ),
-            const BookSelectionContainer(
+            BookSelectionContainer(
               containerText: 'College',
               containerColor: Color(0xFFFFC8B8),
               containerTextColor: Color(0xFF9C5040),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const BookSelectionContainer(
+          children: const [
+            BookSelectionContainer(
               containerText: 'Material',
               containerColor: Color(0xFF7EC893),
               containerTextColor: Color(0xFF388C4E),
             ),
-            const BookSelectionContainer(
+            BookSelectionContainer(
               containerText: 'Paper',
               containerColor: Color(0xFF757575),
               containerTextColor: Color(0xFF424242),

@@ -34,16 +34,16 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,
-        items: [
-          const BottomNavigationBarItem(
+        items: const[
+           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: 'Dashboard',
           ),
-          const BottomNavigationBarItem(
+           BottomNavigationBarItem(
             icon: Icon(Icons.map_outlined),
             label: 'Map',
           ),
-          const BottomNavigationBarItem(
+           BottomNavigationBarItem(
             icon: Icon(Icons.settings_applications_outlined),
             label: 'Settings',
           ),
