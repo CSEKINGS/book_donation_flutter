@@ -6,7 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 /// Map page
 class MapView extends StatefulWidget {
   /// default constructor
-  const MapView({Key key}) : super(key: key);
+  const MapView({Key? key}) : super(key: key);
   @override
   State<MapView> createState() => MapViewState();
 }
@@ -32,9 +32,7 @@ class MapViewState extends State<MapView> {
       body: GoogleMap(
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+        onMapCreated: _controller.complete,
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,

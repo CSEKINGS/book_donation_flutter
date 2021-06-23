@@ -7,10 +7,10 @@ class DonationOrSellContainer extends StatelessWidget {
   /// we pass container text, container color and container text color
   /// to extract the widget to follow the DRY principle
   const DonationOrSellContainer({
-    Key key,
-    @required this.containerText,
-    @required this.containerColor,
-    @required this.containerTextColor,
+    Key? key,
+    required this.containerText,
+    required this.containerColor,
+    required this.containerTextColor,
   }) : super(key: key);
 
   /// text which shows in the middle of the donation or sell widget

@@ -8,7 +8,7 @@ import 'package:book_donation/utils/theme/theme.dart';
 /// settings view which contains theme and other settings
 class SettingsView extends StatefulWidget {
   /// default constructor
-  const SettingsView({Key key}) : super(key: key);
+  const SettingsView({Key? key}) : super(key: key);
 
   @override
   _SettingsViewState createState() => _SettingsViewState();
@@ -25,8 +25,8 @@ class _SettingsViewState extends State<SettingsView> {
           body: Column(
         children: [
           ListTile(
-            leading: Icon(Icons.brush),
-            title: Text('Theme'),
+            leading: const Icon(Icons.brush),
+            title: const Text('Theme'),
             contentPadding: const EdgeInsets.all(16.0),
             trailing: DayNightSwitcher(
               isDarkModeEnabled: _darkTheme,

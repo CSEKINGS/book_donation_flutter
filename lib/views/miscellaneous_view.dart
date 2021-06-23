@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 /// Settings page
 class MiscellaneousView extends StatefulWidget {
   /// default constructor
-  const MiscellaneousView({Key key}) : super(key: key);
+  const MiscellaneousView({Key? key}) : super(key: key);
 
   @override
   _MiscellaneousViewState createState() => _MiscellaneousViewState();

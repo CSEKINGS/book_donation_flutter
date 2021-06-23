@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// This shows a navigation bar to navigate to other screen
 class HomeNavigationView extends StatefulWidget {
   /// default constructor
-  const HomeNavigationView({Key key}) : super(key: key);
+  const HomeNavigationView({Key? key}) : super(key: key);
 
   @override
   _HomeNavigationViewState createState() => _HomeNavigationViewState();

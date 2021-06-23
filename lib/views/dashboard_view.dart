@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// Dashboard page which shows buy and sell widgets and book category widget
 class DashboardView extends StatefulWidget {
   /// default constructor
-  const DashboardView({Key key}) : super(key: key);
+  const DashboardView({Key? key}) : super(key: key);
 
   @override
   _DashboardViewState createState() => _DashboardViewState();
@@ -38,7 +38,7 @@ class _DashboardViewState extends State<DashboardView> {
 class TopBar extends StatelessWidget {
   /// default constructor
   const TopBar({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -63,7 +63,7 @@ class TopBar extends StatelessWidget {
 class DonationOrSell extends StatelessWidget {
   /// default constructor
   const DonationOrSell({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -90,7 +90,7 @@ class DonationOrSell extends StatelessWidget {
 class BookSelectionText extends StatelessWidget {
   /// default constructor
   const BookSelectionText({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -109,7 +109,7 @@ class BookSelectionText extends StatelessWidget {
 class BookSelection extends StatelessWidget {
   /// default constructor
   const BookSelection({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
