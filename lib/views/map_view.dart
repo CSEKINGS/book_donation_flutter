@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 /// Map page
 class MapView extends StatefulWidget {
@@ -28,18 +29,24 @@ class MapViewState extends State<MapView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: _controller.complete,
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _goToTheLake,
-        label: const Text('To the lake!'),
-        icon: const Icon(Icons.directions_boat),
-      ),
-    );
+    if (kIsWeb) {
+      return const Center(
+        child: Text('Google maps not supported in web yet'),
+      );
+    } else {
+      return Scaffold(
+        body: GoogleMap(
+          mapType: MapType.hybrid,
+          initialCameraPosition: _kGooglePlex,
+          onMapCreated: _controller.complete,
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: _goToTheLake,
+          label: const Text('To the lake!'),
+          icon: const Icon(Icons.directions_boat),
+        ),
+      );
+    }
   }
 
   Future<void> _goToTheLake() async {

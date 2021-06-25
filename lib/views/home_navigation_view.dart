@@ -32,8 +32,6 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: const [
@@ -51,7 +49,7 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings_applications_outlined,
+              Icons.settings_applications,
             ),
             label: 'Settings',
           ),

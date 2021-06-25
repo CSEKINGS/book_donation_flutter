@@ -14,39 +14,65 @@ class _ProfileViewState extends State<ProfileView> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-            child: Container(
-                padding: const EdgeInsets.all(20.0),
-                child: Form(
-                  key: formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Center(
-                          child: Hero(
-                        tag: 'profile',
-                        child: CircleAvatar(
-                          radius: 80.0,
-                        ),
-                      )),
-                      const SizedBox(
-                        height: 20.0,
+    return Scaffold(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+          child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Hero(
+                      tag: 'profile',
+                      child: CircleAvatar(
+                        radius: 80.0,
                       ),
-                      TextFormField(
-                        autofocus: false,
-                        onSaved: (value) => {},
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        )),
-                      )
-                    ],
-                  ),
-                ))),
-      ),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextFormField(
+                      autofocus: false,
+                      onSaved: (value) => {},
+                      decoration: InputDecoration(
+                          labelText: 'Name',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          )),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextFormField(
+                      autofocus: false,
+                      onSaved: (value) => {},
+                      decoration: InputDecoration(
+                          labelText: 'Date of birth',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          )),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextFormField(
+                      autofocus: false,
+                      onSaved: (value) => {},
+                      decoration: InputDecoration(
+                          labelText: 'Mobile number',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          )),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextFormField(
+                      autofocus: false,
+                      onSaved: (value) => {},
+                      decoration: InputDecoration(
+                          labelText: 'Address',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          )),
+                    ),
+                  ],
+                ),
+              ))),
     );
   }
 }

@@ -20,26 +20,25 @@ class _SettingsViewState extends State<SettingsView> {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     _darkTheme = (themeNotifier.getTheme() == darkTheme);
-    return SafeArea(
-      child: Scaffold(
-          body: Column(
-        children: [
-          ListTile(
-            leading: const Icon(Icons.brush),
-            title: const Text('Theme'),
-            contentPadding: const EdgeInsets.all(16.0),
-            trailing: DayNightSwitcher(
-              isDarkModeEnabled: _darkTheme,
-              onStateChanged: (val) {
-                setState(() {
-                  _darkTheme = val;
-                });
-                onThemeChanged(val, themeNotifier);
-              },
+    return Scaffold(
+        appBar: AppBar(),
+        body: Column(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.brush),
+              title: const Text('Theme'),
+              contentPadding: const EdgeInsets.all(16.0),
+              trailing: DayNightSwitcher(
+                isDarkModeEnabled: _darkTheme,
+                onStateChanged: (val) {
+                  setState(() {
+                    _darkTheme = val;
+                  });
+                  onThemeChanged(val, themeNotifier);
+                },
+              ),
             ),
-          ),
-        ],
-      )),
-    );
+          ],
+        ));
   }
 }

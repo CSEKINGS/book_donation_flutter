@@ -2,6 +2,7 @@ import 'package:book_donation/views/profile_view.dart';
 import 'package:book_donation/views/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:book_donation/utils/constants.dart';
 
 /// Settings page
 class MiscellaneousView extends StatefulWidget {
@@ -13,7 +14,6 @@ class MiscellaneousView extends StatefulWidget {
 }
 
 class _MiscellaneousViewState extends State<MiscellaneousView> {
-  static const _url = 'https://discord.gg/kahfsxFf';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -75,9 +75,8 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                     leading: const Icon(Icons.people),
                     trailing: const Icon(Icons.arrow_forward_ios),
                     onTap: () async {
-                      await canLaunch(_url)
-                          ? await launch(_url)
-                          : throw 'Could not launch $_url';
+                      Error error = ArgumentError('Could not launch $url');
+                      await canLaunch(url) ? await launch(url) : throw error;
                     }),
               ],
             ),

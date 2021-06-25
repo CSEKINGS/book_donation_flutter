@@ -12,7 +12,7 @@ void main() async {
     runApp(
       ChangeNotifierProvider<ThemeNotifier>(
         create: (context) => ThemeNotifier(darkModeOn ? darkTheme : lightTheme),
-        child: MyApp(),
+        child: const MyApp(),
       ),
     );
   });
@@ -20,6 +20,9 @@ void main() async {
 
 /// This widget is the root of your application.
 class MyApp extends StatelessWidget {
+  /// default constructor
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
