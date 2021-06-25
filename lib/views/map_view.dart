@@ -21,12 +21,6 @@ class MapViewState extends State<MapView> {
     zoom: 14.4746,
   );
 
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
-
   @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
@@ -35,22 +29,34 @@ class MapViewState extends State<MapView> {
       );
     } else {
       return Scaffold(
-        body: GoogleMap(
-          mapType: MapType.hybrid,
-          initialCameraPosition: _kGooglePlex,
-          onMapCreated: _controller.complete,
-        ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: _goToTheLake,
-          label: const Text('To the lake!'),
-          icon: const Icon(Icons.directions_boat),
-        ),
+        body: Stack(children: [
+          GoogleMap(
+            mapType: MapType.normal,
+            initialCameraPosition: _kGooglePlex,
+            onMapCreated: _controller.complete,
+          ),
+          Positioned(
+            top: 40,
+            right: 15,
+            left: 15,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: const TextField(
+                cursorColor: Colors.black,
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.go,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 15),
+                    hintText: 'Search...'),
+              ),
+            ),
+          ),
+        ]),
       );
     }
-  }
-
-  Future<void> _goToTheLake() async {
-    final controller = await _controller.future;
-    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }
