@@ -28,6 +28,7 @@ final lightTheme = ThemeData(
   backgroundColor: Colors.white,
   scaffoldBackgroundColor: Colors.white,
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: Colors.white,
     elevation: 0.0,
   ),
   accentColor: const Color(0xFF617BF3),
