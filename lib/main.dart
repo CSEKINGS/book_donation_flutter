@@ -1,6 +1,6 @@
 import 'package:book_donation/utils/theme/theme.dart';
 import 'package:book_donation/utils/theme/theme_notifier.dart';
-import 'package:book_donation/views/home_navigation_view.dart';
+import 'package:book_donation/views/registration_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Book Donation',
       theme: themeNotifier.getTheme(),
-      home: const HomeNavigationView(),
+      home: const RegistrationView(),
     );
   }
 }

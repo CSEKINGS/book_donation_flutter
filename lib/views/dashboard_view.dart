@@ -145,7 +145,7 @@ class BookSelection extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          height: 10.0,
+          height: 25.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
