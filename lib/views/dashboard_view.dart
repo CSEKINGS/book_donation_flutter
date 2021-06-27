@@ -15,21 +15,22 @@ class DashboardView extends StatefulWidget {
 class _DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            TopBar(),
-            DonationOrSell(),
-            BookSelectionText(),
-            BookSelection(),
-          ],
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              TopBar(),
+              DonationOrSell(),
+              BookSelectionText(),
+              BookSelection(),
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }
 
@@ -49,8 +50,14 @@ class TopBar extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('Halo, Harish'),
-            Text('We wish you have a good day ')
+            Text(
+              'Halo, Human',
+              style: TextStyle(fontSize: 25.0),
+            ),
+            Text(
+              'We wish you have a good day ',
+              style: TextStyle(color: Colors.grey, fontSize: 15.0),
+            )
           ],
         ),
         const CircleAvatar(),
@@ -98,8 +105,14 @@ class BookSelectionText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
-        Text('Book Selection'),
-        Text('See all'),
+        Text(
+          'Book Selection',
+          style: TextStyle(fontSize: 20.0),
+        ),
+        Text(
+          'See all',
+          style: TextStyle(fontSize: 15.0, color: Colors.grey),
+        ),
       ],
     );
   }

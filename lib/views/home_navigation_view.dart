@@ -31,29 +31,31 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
-        currentIndex: _currentIndex,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
+      bottomNavigationBar: SafeArea(
+        child: BottomNavigationBar(
+          onTap: onTabTapped,
+          currentIndex: _currentIndex,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+              ),
+              label: 'Dashboard',
             ),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.map_outlined,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.map_outlined,
+              ),
+              label: 'Map',
             ),
-            label: 'Map',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings_applications,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings_applications,
+              ),
+              label: 'Settings',
             ),
-            label: 'Settings',
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

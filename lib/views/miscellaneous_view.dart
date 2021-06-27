@@ -23,12 +23,18 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
         child: Column(
           children: [
             const ListTile(
-              title: Text('William John shane'),
+              title: Text(
+                'William John shane',
+                style: TextStyle(fontSize: 20.0),
+              ),
               leading: Hero(
                 tag: 'profile',
                 child: CircleAvatar(),
               ),
-              subtitle: Text('Student'),
+              subtitle: Text(
+                'Student',
+                style: TextStyle(fontSize: 15.0),
+              ),
             ),
             const Divider(
               thickness: 0.6,
