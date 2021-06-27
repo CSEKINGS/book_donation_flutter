@@ -94,7 +94,7 @@ class _ProfileViewState extends State<ProfileView> {
                       const SizedBox(
                         height: 20.0,
                       ),
-                      OutlinedButton(
+                      ElevatedButton(
                         onPressed: () {},
                         child: const Text('Submit'),
                       ),
