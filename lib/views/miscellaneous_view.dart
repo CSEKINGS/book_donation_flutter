@@ -78,13 +78,37 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                   onTap: () {},
                 ),
                 ListTile(
-                    title: const Text('Community'),
-                    leading: const Icon(LineIcons.discord),
-                    trailing: const Icon(LineIcons.alternateLongArrowRight),
-                    onTap: () async {
-                      Error error = ArgumentError('Could not launch $url');
-                      await canLaunch(url) ? await launch(url) : throw error;
-                    }),
+                  title: const Text('Community'),
+                  leading: const Icon(LineIcons.discord),
+                  trailing: const Icon(LineIcons.alternateLongArrowRight),
+                  onTap: () async {
+                    Error error = ArgumentError('Could not launch $url');
+                    await canLaunch(url) ? await launch(url) : throw error;
+                  },
+                ),
+                ListTile(
+                  title: const Text('About'),
+                  leading: const Icon(LineIcons.infoCircle),
+                  trailing: const Icon(LineIcons.alternateLongArrowRight),
+                  onTap: () {
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Book Donation'),
+                        content:
+                            const Text('An Open-Source projects which aims to '
+                                'encourage book donation.'
+                                ' \n\nMade with ❤ in Flutter'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'OK'),
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ],

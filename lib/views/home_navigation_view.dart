@@ -2,7 +2,6 @@ import 'package:book_donation/views/dashboard_view.dart';
 import 'package:book_donation/views/map_view.dart';
 import 'package:book_donation/views/miscellaneous_view.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 
 /// The first screen of the app after login.

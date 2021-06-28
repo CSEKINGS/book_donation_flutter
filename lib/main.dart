@@ -2,15 +2,16 @@ import 'package:book_donation/utils/theme/theme.dart';
 import 'package:book_donation/utils/theme/theme_notifier.dart';
 import 'package:book_donation/views/registration_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-  ));
+
+  /// transparent status bar not working
+  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  //   statusBarColor: Colors.transparent,
+  // ));
   await SharedPreferences.getInstance().then((prefs) {
     /// change this to false if you want to start app with light theme.
     var darkModeOn = prefs.getBool('darkMode') ?? true;
