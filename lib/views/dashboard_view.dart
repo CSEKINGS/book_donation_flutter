@@ -1,3 +1,4 @@
+import 'package:book_donation/views/profile_view.dart';
 import 'package:book_donation/views/sell_book_view.dart';
 import 'package:book_donation/views/widgets/find_book_container.dart';
 import 'package:book_donation/views/widgets/donation_or_sell_container.dart';
@@ -63,7 +64,20 @@ class TopBar extends StatelessWidget {
             )
           ],
         ),
-        const CircleAvatar(),
+        Hero(
+            tag: 'profile',
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfileView(),
+                    ),
+                  );
+                },
+                child: const CircleAvatar(
+                  radius: 25.0,
+                ))),
       ],
     );
   }

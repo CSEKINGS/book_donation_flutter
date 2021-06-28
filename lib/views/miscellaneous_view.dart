@@ -1,3 +1,4 @@
+import 'package:book_donation/views/f_a_qs_view.dart';
 import 'package:book_donation/views/profile_view.dart';
 import 'package:book_donation/views/settings_view.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,14 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                   title: const Text('FAQs'),
                   leading: const Icon(LineIcons.questionCircleAlt),
                   trailing: const Icon(LineIcons.alternateLongArrowRight),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FAQsView(),
+                      ),
+                    );
+                  },
                 ),
                 ListTile(
                   title: const Text('Community'),
