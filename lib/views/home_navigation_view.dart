@@ -2,6 +2,8 @@ import 'package:book_donation/views/dashboard_view.dart';
 import 'package:book_donation/views/map_view.dart';
 import 'package:book_donation/views/miscellaneous_view.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
 
 /// The first screen of the app after login.
 /// This shows a navigation bar to navigate to other screen
@@ -38,21 +40,21 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home_outlined,
+                LineIcons.home,
               ),
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.map_outlined,
+                LineIcons.mapMarked,
               ),
               label: 'Map',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.settings_applications,
+                LineIcons.user,
               ),
-              label: 'Settings',
+              label: 'Menu',
             ),
           ],
         ),

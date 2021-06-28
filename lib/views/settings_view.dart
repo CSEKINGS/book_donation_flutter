@@ -2,6 +2,7 @@ import 'package:book_donation/utils/theme/theme_notifier.dart';
 import 'package:book_donation/utils/theme/theme_shared_pref.dart';
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:book_donation/utils/theme/theme.dart';
 
@@ -25,7 +26,7 @@ class _SettingsViewState extends State<SettingsView> {
         body: Column(
           children: [
             ListTile(
-              leading: const Icon(Icons.brush),
+              leading: const Icon(LineIcons.palette),
               title: const Text('Theme'),
               contentPadding: const EdgeInsets.all(16.0),
               trailing: DayNightSwitcher(

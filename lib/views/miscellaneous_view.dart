@@ -1,6 +1,7 @@
 import 'package:book_donation/views/profile_view.dart';
 import 'package:book_donation/views/settings_view.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:book_donation/utils/constants.dart';
 
@@ -43,8 +44,8 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
               children: [
                 ListTile(
                   title: const Text('Personal data'),
-                  leading: const Icon(Icons.person_outline),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(LineIcons.user),
+                  trailing: const Icon(LineIcons.alternateLongArrowRight),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -56,8 +57,8 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                 ),
                 ListTile(
                   title: const Text('Settings'),
-                  leading: const Icon(Icons.settings),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(LineIcons.wrench),
+                  trailing: const Icon(LineIcons.alternateLongArrowRight),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -72,14 +73,14 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                 ),
                 ListTile(
                   title: const Text('FAQs'),
-                  leading: const Icon(Icons.message),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(LineIcons.questionCircleAlt),
+                  trailing: const Icon(LineIcons.alternateLongArrowRight),
                   onTap: () {},
                 ),
                 ListTile(
                     title: const Text('Community'),
-                    leading: const Icon(Icons.people),
-                    trailing: const Icon(Icons.arrow_forward_ios),
+                    leading: const Icon(LineIcons.discord),
+                    trailing: const Icon(LineIcons.alternateLongArrowRight),
                     onTap: () async {
                       Error error = ArgumentError('Could not launch $url');
                       await canLaunch(url) ? await launch(url) : throw error;
