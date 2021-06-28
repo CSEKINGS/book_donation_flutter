@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// Book category selection widget
-class BookSelectionContainer extends StatelessWidget {
+class FindBookContainer extends StatelessWidget {
   /// we pass container text, container color and container text color
   /// to extract the widget to follow the DRY principle
-  const BookSelectionContainer({
+  const FindBookContainer({
     Key? key,
     required this.containerText,
     required this.containerColor,

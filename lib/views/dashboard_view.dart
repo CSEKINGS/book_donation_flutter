@@ -1,7 +1,10 @@
-import 'package:book_donation/views/widgets/book_selection_container.dart';
+import 'package:book_donation/views/sell_book_view.dart';
+import 'package:book_donation/views/widgets/find_book_container.dart';
 import 'package:book_donation/views/widgets/donation_or_sell_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'donate_book_view.dart';
 
 /// Dashboard page which shows buy and sell widgets and book category widget
 class DashboardView extends StatefulWidget {
@@ -24,8 +27,8 @@ class _DashboardViewState extends State<DashboardView> {
             children: const [
               TopBar(),
               DonationOrSell(),
-              BookSelectionText(),
-              BookSelection(),
+              FindBookText(),
+              FindBook(),
             ],
           ),
         ),
@@ -77,16 +80,36 @@ class DonationOrSell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        DonationOrSellContainer(
-          containerText: 'Donation',
-          containerColor: Color(0xFFFFE540),
-          containerTextColor: Color(0xFFCCA434),
+      children: [
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DonateBookView(),
+              ),
+            );
+          },
+          child: const DonationOrSellContainer(
+            containerText: 'Donation',
+            containerColor: Color(0xFFFFE540),
+            containerTextColor: Color(0xFFCCA434),
+          ),
         ),
-        DonationOrSellContainer(
-          containerText: 'Selling Books',
-          containerColor: Color(0xFFECEFFE),
-          containerTextColor: Color(0xFF617BF3),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SellBookView(),
+              ),
+            );
+          },
+          child: const DonationOrSellContainer(
+            containerText: 'Selling Books',
+            containerColor: Color(0xFFECEFFE),
+            containerTextColor: Color(0xFF617BF3),
+          ),
         ),
       ],
     );
@@ -94,9 +117,9 @@ class DonationOrSell extends StatelessWidget {
 }
 
 /// this is the text you see above the book category selection widget
-class BookSelectionText extends StatelessWidget {
+class FindBookText extends StatelessWidget {
   /// default constructor
-  const BookSelectionText({
+  const FindBookText({
     Key? key,
   }) : super(key: key);
 
@@ -104,24 +127,26 @@ class BookSelectionText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        Text(
-          'Book Selection',
-          style: TextStyle(fontSize: 20.0),
+      children: [
+        const Text(
+          'Categories',
+          style: TextStyle(fontSize: 18.0),
         ),
-        Text(
-          'See all',
-          style: TextStyle(fontSize: 15.0, color: Colors.grey),
-        ),
+        OutlinedButton(
+          onPressed: () {},
+          child: const Text(
+            'Search book',
+          ),
+        )
       ],
     );
   }
 }
 
 /// this is the bottom most widget in the dashboard
-class BookSelection extends StatelessWidget {
+class FindBook extends StatelessWidget {
   /// default constructor
-  const BookSelection({
+  const FindBook({
     Key? key,
   }) : super(key: key);
 
@@ -132,13 +157,13 @@ class BookSelection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
-            BookSelectionContainer(
+            FindBookContainer(
               containerColor: Color(0xFF7ED9EE),
-              containerText: 'Magazine',
+              containerText: 'College',
               containerTextColor: Color(0xFF1B75A1),
             ),
-            BookSelectionContainer(
-              containerText: 'College',
+            FindBookContainer(
+              containerText: 'School',
               containerColor: Color(0xFFFFC8B8),
               containerTextColor: Color(0xFF9C5040),
             ),
@@ -150,13 +175,13 @@ class BookSelection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
-            BookSelectionContainer(
-              containerText: 'Material',
+            FindBookContainer(
+              containerText: 'Research',
               containerColor: Color(0xFF7EC893),
               containerTextColor: Color(0xFF388C4E),
             ),
-            BookSelectionContainer(
-              containerText: 'Paper',
+            FindBookContainer(
+              containerText: 'Comics',
               containerColor: Color(0xFF757575),
               containerTextColor: Color(0xFF424242),
             ),
