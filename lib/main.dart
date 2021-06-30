@@ -14,7 +14,7 @@ void main() async {
   // ));
   await SharedPreferences.getInstance().then((prefs) {
     /// change this to false if you want to start app with light theme.
-    var darkModeOn = prefs.getBool('darkMode') ?? true;
+    var darkModeOn = prefs.getBool('darkMode') ?? false;
     runApp(
       ChangeNotifierProvider<ThemeNotifier>(
         create: (context) => ThemeNotifier(darkModeOn ? darkTheme : lightTheme),
