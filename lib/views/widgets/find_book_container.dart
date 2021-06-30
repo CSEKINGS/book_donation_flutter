@@ -25,7 +25,7 @@ class FindBookContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: displayHeight(context) * 0.14,
+      height: displayHeight(context) * 0.08,
       width: displayWidth(context) * 0.42,
       decoration: BoxDecoration(
           color: containerColor, borderRadius: BorderRadius.circular(20.0)),

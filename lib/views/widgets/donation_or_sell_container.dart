@@ -27,7 +27,7 @@ class DonationOrSellContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: containerColor, borderRadius: BorderRadius.circular(20.0)),
-      height: displayHeight(context) * 0.30,
+      height: displayHeight(context) * 0.08,
       width: displayWidth(context) * 0.42,
       child: Center(
           child: Text(

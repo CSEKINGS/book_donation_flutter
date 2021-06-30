@@ -24,7 +24,7 @@ class _DashboardViewState extends State<DashboardView> {
         child: Container(
           padding: const EdgeInsets.all(20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
               TopBar(),
               DonationOrSell(),
