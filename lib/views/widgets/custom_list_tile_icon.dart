@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 /// beautiful custom list tile icon
 class CustomListTileIcon extends StatelessWidget {
   /// constructor
