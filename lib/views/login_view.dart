@@ -17,16 +17,16 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-            child: Stack(
+        child: Stack(
           alignment: AlignmentDirectional.center,
           children: [
-            Blob.random(
-              size: 300,
+            Blob.fromID(
+              size: 1000,
               styles: BlobStyles(
                 color: Colors.deepPurpleAccent[200],
                 fillType: BlobFillType.fill,
               ),
+              id: ['1-2-ZZZZ', 'X-Y-ZZZZ', 'X-Y-ZZZZ'],
             ),
             Form(
               child: Padding(
@@ -98,7 +98,7 @@ class _LoginViewState extends State<LoginView> {
               ),
             ),
           ],
-        )),
+        ),
       ),
     );
   }
