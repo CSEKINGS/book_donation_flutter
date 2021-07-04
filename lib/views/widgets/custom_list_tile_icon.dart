@@ -10,8 +10,11 @@ class CustomListTileIcon extends StatelessWidget {
     required this.iconColor,
   }) : super(key: key);
 
+/// color of the center icon
   final IconData tileIcon;
+  /// circle background color
   final Color iconBackgroundColor;
+  /// icon color
   final Color iconColor;
 
   @override
