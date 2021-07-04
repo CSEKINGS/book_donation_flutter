@@ -9,9 +9,10 @@ class Book {
     required this.category,
     required this.description,
     required this.photo,
+    required this.coordinates,
   });
 
-  /// used to create a object from a map
+  /// factory convert from map
   factory Book.fromMap(Map<String, dynamic> map) {
     return Book(
       name: map['name'],
@@ -19,10 +20,11 @@ class Book {
       category: map['category'],
       description: map['description'],
       photo: map['photo'],
+      coordinates: Coordinates.fromMap(map['coordinates']),
     );
   }
 
-  /// convert the json which we got from the server to map
+  /// factory from json
   factory Book.fromJson(String source) => Book.fromMap(json.decode(source));
 
   /// book name
@@ -40,7 +42,10 @@ class Book {
   /// photo of the book
   String photo;
 
-  /// to map method to create a map from the object
+  ///
+  Coordinates coordinates;
+
+  /// convert to map
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -48,9 +53,48 @@ class Book {
       'category': category,
       'description': description,
       'photo': photo,
+      'coordinates': coordinates.toMap(),
     };
   }
 
-  /// convert the map to json to send data to server
+  /// to json
+  String toJson() => json.encode(toMap());
+}
+
+/// coordinates class
+class Coordinates {
+  /// constructor
+  Coordinates({
+    required this.lat,
+    required this.lng,
+  });
+
+  /// factory convert json to map object
+  factory Coordinates.fromJson(String source) =>
+      Coordinates.fromMap(json.decode(source));
+
+  /// create json from map
+  factory Coordinates.fromMap(Map<String, dynamic> map) {
+    return Coordinates(
+      lat: map['lat'],
+      lng: map['lng'],
+    );
+  }
+
+  /// latitude
+  String lat;
+
+  /// longitude
+  String lng;
+
+  /// map values
+  Map<String, dynamic> toMap() {
+    return {
+      'lat': lat,
+      'lng': lng,
+    };
+  }
+
+  /// convert to json
   String toJson() => json.encode(toMap());
 }

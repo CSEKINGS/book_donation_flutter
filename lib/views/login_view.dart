@@ -20,13 +20,12 @@ class _LoginViewState extends State<LoginView> {
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: [
-            Blob.fromID(
+            Blob.random(
               size: 1000,
               styles: BlobStyles(
                 color: Colors.deepPurpleAccent[200],
                 fillType: BlobFillType.fill,
               ),
-              id: ['1-2-ZZZZ', 'X-Y-ZZZZ', 'X-Y-ZZZZ'],
             ),
             Form(
               child: Padding(
