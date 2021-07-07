@@ -1,5 +1,6 @@
 import 'package:book_donation/utils/theme/theme_notifier.dart';
 import 'package:book_donation/utils/theme/theme_shared_pref.dart';
+import 'package:book_donation/views/widgets/custom_list_tile_icon.dart';
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
@@ -26,7 +27,11 @@ class _SettingsViewState extends State<SettingsView> {
         body: Column(
           children: [
             ListTile(
-              leading: const Icon(LineIcons.palette),
+              leading: const CustomListTileIcon(
+                tileIcon: LineIcons.palette,
+                iconColor: Color(0xFFD85A71),
+                iconBackgroundColor: Color(0xFFF0D9DF),
+              ),
               title: const Text('Theme'),
               contentPadding: const EdgeInsets.all(16.0),
               trailing: DayNightSwitcher(

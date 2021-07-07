@@ -4,8 +4,7 @@ import 'package:flutter/services.dart';
 /// dark custom theme
 final darkTheme = ThemeData(
   fontFamily: 'Rubik',
-  primarySwatch: Colors.indigo,
-  primaryColor: const Color(0xFF1F1F1F),
+  primaryColor: const Color(0xFF617BF3),
   scaffoldBackgroundColor: const Color(0xFF1F1F1F),
   brightness: Brightness.dark,
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -22,7 +21,6 @@ final darkTheme = ThemeData(
 /// light custom theme
 final lightTheme = ThemeData(
   fontFamily: 'Rubik',
-  primarySwatch: Colors.indigo,
   primaryColor: const Color(0xFF617BF3),
   brightness: Brightness.light,
   backgroundColor: Colors.white,

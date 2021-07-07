@@ -91,7 +91,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        OutlinedButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.push(
                               context,
