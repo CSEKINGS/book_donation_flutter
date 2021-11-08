@@ -1,7 +1,7 @@
 # book_donation
 
 A new Flutter project.
-No dead yet.
+Not dead yet.
 
 ## Getting Started
 
