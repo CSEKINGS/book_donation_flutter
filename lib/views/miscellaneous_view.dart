@@ -143,6 +143,18 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                     );
                   },
                 ),
+                ListTile(
+                  title: const Text('Logout'),
+                  subtitle: const Text('Logout from app'),
+                  leading: const CustomListTileIcon(
+                    tileIcon: LineIcons.user,
+                    iconColor: Color(0xFF29A1DC),
+                    iconBackgroundColor: Color(0xFFDDF6F7),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ],
             ),
           ],
