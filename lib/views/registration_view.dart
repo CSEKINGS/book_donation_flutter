@@ -1,3 +1,4 @@
+import 'package:book_donation/controllers/api/api.dart';
 import 'package:book_donation/views/home_navigation_view.dart';
 import 'package:book_donation/views/login_view.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,16 @@ class RegistrationView extends StatefulWidget {
 }
 
 class _RegistrationViewState extends State<RegistrationView> {
+  String name = '';
+  String email = '';
+  String password = '';
+  String mobileNo = '';
+  String address = '';
+  String photo = '';
+  String location = '';
+
+  final _registrationFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +30,7 @@ class _RegistrationViewState extends State<RegistrationView> {
         child: Center(
           child: SingleChildScrollView(
             child: Form(
+              key: _registrationFormKey,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
@@ -34,58 +46,74 @@ class _RegistrationViewState extends State<RegistrationView> {
                     ),
                     TextFormField(
                       autofocus: false,
-                      onSaved: (value) => {},
+                      onSaved: (value) => {name = value!},
                       decoration: InputDecoration(
-                          filled: true,
-                          labelText: 'Name',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          )),
+                        filled: true,
+                        labelText: 'Name',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 20.0),
                     TextFormField(
                       autofocus: false,
-                      onSaved: (value) => {},
+                      onSaved: (value) => {email = value!},
                       decoration: InputDecoration(
-                          filled: true,
-                          labelText: 'Date of birth',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          )),
+                        filled: true,
+                        labelText: 'Email',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 20.0),
                     TextFormField(
                       autofocus: false,
-                      onSaved: (value) => {},
+                      onSaved: (value) => {password = value!},
                       decoration: InputDecoration(
-                          filled: true,
-                          labelText: 'Mobile number',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          )),
+                        filled: true,
+                        labelText: 'Password',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 20.0),
                     TextFormField(
                       autofocus: false,
-                      onSaved: (value) => {},
+                      onSaved: (value) => {mobileNo = value!},
                       decoration: InputDecoration(
-                          filled: true,
-                          labelText: 'About',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          )),
+                        filled: true,
+                        labelText: 'Mobile number',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 20.0),
                     TextFormField(
-                      maxLines: 4,
                       autofocus: false,
-                      onSaved: (value) => {},
+                      onSaved: (value) => {address = value!},
                       decoration: InputDecoration(
-                          filled: true,
-                          labelText: 'Address',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          )),
+                        filled: true,
+                        labelText: 'Address',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextFormField(
+                      autofocus: false,
+                      onSaved: (value) => {photo = value!},
+                      decoration: InputDecoration(
+                        filled: true,
+                        labelText: 'Location',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 20.0),
                     Row(
@@ -103,16 +131,24 @@ class _RegistrationViewState extends State<RegistrationView> {
                           child: const Text('Already an user ? Login here'),
                         ),
                         ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const HomeNavigationView(),
-                                ),
-                              );
-                            },
-                            child: const Text('Register')),
+                          onPressed: () {
+                            _registrationFormKey.currentState!.save();
+                            attemptSignUp(name, email, password, mobileNo,
+                                    address, location)
+                                .then((value) {
+                              if (value == 'valid') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HomeNavigationView(),
+                                  ),
+                                );
+                              }
+                            });
+                          },
+                          child: const Text('Register'),
+                        ),
                       ],
                     ),
                     const SizedBox(

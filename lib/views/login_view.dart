@@ -1,3 +1,4 @@
+import 'package:book_donation/controllers/api/api.dart';
 import 'package:book_donation/views/registration_view.dart';
 import 'package:flutter/material.dart';
 import 'home_navigation_view.dart';
@@ -12,11 +13,17 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  String username = '';
+  String password = '';
+
+  final _loginFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Form(
+          key: _loginFormKey,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -32,24 +39,26 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 TextFormField(
                   autofocus: false,
-                  onSaved: (value) => {},
+                  onSaved: (value) => {username = value!},
                   decoration: InputDecoration(
-                      filled: true,
-                      labelText: 'Email',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      )),
+                    filled: true,
+                    labelText: 'Username',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 20.0),
                 TextFormField(
                   autofocus: false,
-                  onSaved: (value) => {},
+                  onSaved: (value) => {password = value!},
                   decoration: InputDecoration(
-                      filled: true,
-                      labelText: 'Password',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      )),
+                    filled: true,
+                    labelText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 20.0),
                 Row(
@@ -67,12 +76,22 @@ class _LoginViewState extends State<LoginView> {
                       child: const Text('New user ? Register here'),
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomeNavigationView(),
-                          ),
+                      onPressed: () async {
+                        _loginFormKey.currentState!.save();
+
+                        await attemptLogIn(username, password).then(
+                          (value) {
+                            if (value == 'invalid') {
+                            } else if (value == 'valid') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const HomeNavigationView(),
+                                ),
+                              );
+                            }
+                          },
                         );
                       },
                       child: const Text('Login'),

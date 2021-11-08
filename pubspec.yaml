@@ -35,6 +35,8 @@ dependencies:
   url_launcher: ^6.0.7
 
   line_icons: ^2.0.1
+  http: ^0.13.4
+  flutter_secure_storage: ^4.2.1
 
 
 
