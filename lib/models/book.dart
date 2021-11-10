@@ -2,14 +2,15 @@ import 'dart:convert';
 
 /// book data class
 class Book {
-  /// default constructor
+  /// creates a Book with required field [name], [author], 
+  /// [category], [description], [photo], [location] 
   Book({
     required this.name,
     required this.author,
     required this.category,
     required this.description,
     required this.photo,
-    required this.coordinates,
+    required this.location,
   });
 
   /// factory convert from map
@@ -20,7 +21,7 @@ class Book {
       category: map['category'],
       description: map['description'],
       photo: map['photo'],
-      coordinates: Coordinates.fromMap(map['coordinates']),
+      location: Coordinates.fromMap(map['coordinates']),
     );
   }
 
@@ -42,8 +43,8 @@ class Book {
   /// photo of the book
   String photo;
 
-  ///
-  Coordinates coordinates;
+  /// location of the book
+  Coordinates location;
 
   /// convert to map
   Map<String, dynamic> toMap() {
@@ -53,7 +54,7 @@ class Book {
       'category': category,
       'description': description,
       'photo': photo,
-      'coordinates': coordinates.toMap(),
+      'coordinates': location.toMap(),
     };
   }
 
