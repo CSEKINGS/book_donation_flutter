@@ -21,6 +21,7 @@
        <meta-data android:name="com.google.android.geo.API_KEY"
            android:value="AIzaSyCXGTE3PwoD7IBveO6q-0FGHNaixnypKOc"/>
         <activity
+            android:exported ="true"
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
