@@ -1,4 +1,5 @@
-import 'package:book_donation/controllers/api/api.dart';
+import 'package:book_donation/networking/api/auth.dart';
+import 'package:book_donation/utils/media_query.dart';
 import 'package:book_donation/views/home_navigation_view.dart';
 import 'package:book_donation/views/login_view.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                       style: TextStyle(fontSize: 30.0),
                     ),
                     const SizedBox(
-                      height: 20.0,
+                      height: 40.0,
                     ),
                     TextFormField(
                       autofocus: false,
@@ -50,8 +51,13 @@ class _RegistrationViewState extends State<RegistrationView> {
                       decoration: InputDecoration(
                         filled: true,
                         labelText: 'Name',
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                        fillColor: const Color(0xFFe9eff6),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
@@ -62,8 +68,13 @@ class _RegistrationViewState extends State<RegistrationView> {
                       decoration: InputDecoration(
                         filled: true,
                         labelText: 'Email',
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                        fillColor: const Color(0xFFe9eff6),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
@@ -74,8 +85,13 @@ class _RegistrationViewState extends State<RegistrationView> {
                       decoration: InputDecoration(
                         filled: true,
                         labelText: 'Password',
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                        fillColor: const Color(0xFFe9eff6),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
@@ -86,8 +102,13 @@ class _RegistrationViewState extends State<RegistrationView> {
                       decoration: InputDecoration(
                         filled: true,
                         labelText: 'Mobile number',
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                        fillColor: const Color(0xFFe9eff6),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
@@ -98,27 +119,67 @@ class _RegistrationViewState extends State<RegistrationView> {
                       decoration: InputDecoration(
                         filled: true,
                         labelText: 'Address',
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                        fillColor: const Color(0xFFe9eff6),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
                     const SizedBox(height: 20.0),
                     TextFormField(
+                      readOnly: true,
                       autofocus: false,
                       onSaved: (value) => {photo = value!},
                       decoration: InputDecoration(
                         filled: true,
                         labelText: 'Location',
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                        ),
+                        fillColor: const Color(0xFFe9eff6),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
                     const SizedBox(height: 20.0),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        elevation: 20.0,
+                        shadowColor: const Color(0xFF4460F1),
+                        primary: const Color(0xFF4460F1),
+                        fixedSize: Size(displayWidth(context), 55),
+                      ),
+                      onPressed: () {
+                        _registrationFormKey.currentState!.save();
+                        registerAPI(name, email, password, mobileNo, address,
+                                location)
+                            .then((value) {
+                          if (value == 'valid') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const HomeNavigationView(),
+                              ),
+                            );
+                          }
+                        });
+                      },
+                      child: const Text('Register'),
+                    ),
+                    const SizedBox(
+                      height: 40.0,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        const Text('Already an user?'),
                         TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -128,31 +189,14 @@ class _RegistrationViewState extends State<RegistrationView> {
                               ),
                             );
                           },
-                          child: const Text('Already an user ? Login here'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            _registrationFormKey.currentState!.save();
-                            attemptSignUp(name, email, password, mobileNo,
-                                    address, location)
-                                .then((value) {
-                              if (value == 'valid') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const HomeNavigationView(),
-                                  ),
-                                );
-                              }
-                            });
-                          },
-                          child: const Text('Register'),
+                          child: const Text(
+                            'Login here',
+                            style: TextStyle(
+                              color: Color(0xFF4460F1),
+                            ),
+                          ),
                         ),
                       ],
-                    ),
-                    const SizedBox(
-                      height: 20.0,
                     ),
                   ],
                 ),
