@@ -109,9 +109,9 @@ class _LoginViewState extends State<LoginView> {
 
                         await loginAPI(username, password).then(
                           (value) {
-                            if (value == 'invalid') {
+                            if (value.auth == '') {
                               print('invalid login');
-                            } else if (value == 'valid') {
+                            } else if (value.auth == true) {
                               print('login');
                               Navigator.push(
                                 context,
