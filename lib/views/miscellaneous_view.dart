@@ -1,5 +1,7 @@
+import 'package:book_donation/utils/common_utils.dart';
 import 'package:book_donation/utils/constants.dart';
 import 'package:book_donation/views/f_a_qs_view.dart';
+import 'package:book_donation/views/login_view.dart';
 import 'package:book_donation/views/widgets/custom_list_tile_icon.dart';
 import 'package:book_donation/views/profile_view.dart';
 import 'package:book_donation/views/settings_view.dart';
@@ -151,8 +153,14 @@ class _MiscellaneousViewState extends State<MiscellaneousView> {
                     iconColor: Color(0xFF29A1DC),
                     iconBackgroundColor: Color(0xFFDDF6F7),
                   ),
-                  onTap: () {
-                    Navigator.pop(context);
+                  onTap: () async {
+                    await CommonUtils.storage.delete(key: 'token');
+
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginView()),
+                        (route) => false);
                   },
                 ),
               ],
