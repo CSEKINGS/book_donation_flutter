@@ -1,11 +1,12 @@
-import 'package:book_donation/utils/common_utils.dart';
-import 'package:book_donation/utils/theme/theme.dart';
-import 'package:book_donation/utils/theme/theme_notifier.dart';
-import 'package:book_donation/views/home_navigation_view.dart';
-import 'package:book_donation/views/login_view.dart';
+import 'package:book_donation/src/presentation/views/home_navigation_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'src/config/common_utils.dart';
+import 'src/config/theme/theme.dart';
+import 'src/config/theme/theme_notifier.dart';
+import 'src/presentation/views/login_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

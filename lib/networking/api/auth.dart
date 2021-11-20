@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:book_donation/models/login_response.dart';
-import 'package:book_donation/networking/api/response_handler.dart';
 import 'package:book_donation/networking/constants.dart';
+import 'package:book_donation/src/config/common_utils.dart';
+import 'package:book_donation/src/data/models/login_response.dart';
 import 'package:http/http.dart' as http;
-import 'package:book_donation/utils/common_utils.dart';
+
 
 /// login api
 Future<LoginResponse> loginAPI(String username, String password) async {

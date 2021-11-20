@@ -1,11 +1,11 @@
-import 'package:book_donation/utils/theme/theme_notifier.dart';
-import 'package:book_donation/utils/theme/theme_shared_pref.dart';
-import 'package:book_donation/views/widgets/custom_list_tile_icon.dart';
+import 'package:book_donation/src/config/theme/theme.dart';
+import 'package:book_donation/src/config/theme/theme_notifier.dart';
+import 'package:book_donation/src/config/theme/theme_shared_pref.dart';
+import 'package:book_donation/src/presentation/widgets/custom_list_tile_icon.dart';
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:book_donation/utils/theme/theme.dart';
 
 /// settings view which contains theme and other settings
 class SettingsView extends StatefulWidget {

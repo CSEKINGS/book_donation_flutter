@@ -1,12 +1,13 @@
-import 'package:book_donation/utils/media_query.dart';
+
+import 'package:book_donation/src/config/media_query.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// donation or sell widgets
-class DonationOrSellContainer extends StatelessWidget {
+/// Book category selection widget
+class FindBookContainer extends StatelessWidget {
   /// we pass container text, container color and container text color
   /// to extract the widget to follow the DRY principle
-  const DonationOrSellContainer({
+  const FindBookContainer({
     Key? key,
     required this.containerText,
     required this.containerColor,
@@ -25,18 +26,19 @@ class DonationOrSellContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          color: containerColor, borderRadius: BorderRadius.circular(20.0)),
       height: displayHeight(context) * 0.08,
       width: displayWidth(context) * 0.42,
+      decoration: BoxDecoration(
+          color: containerColor, borderRadius: BorderRadius.circular(20.0)),
       child: Center(
-          child: Text(
-        containerText,
-        style: TextStyle(
-            color: containerTextColor,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold),
-      )),
+        child: Text(
+          containerText,
+          style: TextStyle(
+              color: containerTextColor,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }

@@ -1,6 +1,7 @@
-import 'package:book_donation/utils/theme/theme.dart';
-import 'package:book_donation/utils/theme/theme_notifier.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'theme.dart';
+import 'theme_notifier.dart';
 
 /// shared_preference to store the value of dark theme boolean
 void onThemeChanged(bool value, ThemeNotifier themeNotifier) async {

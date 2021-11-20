@@ -1,7 +1,8 @@
-import 'package:book_donation/views/profile_view.dart';
-import 'package:book_donation/views/sell_book_view.dart';
-import 'package:book_donation/views/widgets/find_book_container.dart';
-import 'package:book_donation/views/widgets/donation_or_sell_container.dart';
+
+import 'package:book_donation/src/presentation/views/profile_view.dart';
+import 'package:book_donation/src/presentation/views/sell_book_view.dart';
+import 'package:book_donation/src/presentation/widgets/donation_or_sell_container.dart';
+import 'package:book_donation/src/presentation/widgets/find_book_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,16 +1,21 @@
-import 'package:book_donation/utils/media_query.dart';
+
+import 'package:book_donation/src/config/media_query.dart';
+import 'package:book_donation/src/data/models/book.dart';
+
 import 'package:flutter/material.dart';
 
-/// book sell view where we can add details about the book and the price
-class SellBookView extends StatefulWidget {
+/// book donation view where we add details about book
+class DonateBookView extends StatefulWidget {
   /// default constructor
-  const SellBookView({Key? key}) : super(key: key);
-
+  const DonateBookView({Key? key}) : super(key: key);
   @override
-  _SellBookViewState createState() => _SellBookViewState();
+  _DonateBookViewState createState() => _DonateBookViewState();
 }
 
-class _SellBookViewState extends State<SellBookView> {
+class _DonateBookViewState extends State<DonateBookView> {
+  /// instance of book class
+  late Book book;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +28,7 @@ class _SellBookViewState extends State<SellBookView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Sell Book',
+                  'Donate Book',
                   style: TextStyle(fontSize: 30.0),
                 ),
                 const SizedBox(
@@ -86,23 +91,6 @@ class _SellBookViewState extends State<SellBookView> {
                   decoration: InputDecoration(
                     filled: true,
                     labelText: 'Edition',
-                    labelStyle: const TextStyle(
-                      color: Colors.black,
-                    ),
-                    fillColor: const Color(0xFFe9eff6),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20.0),
-                TextFormField(
-                  autofocus: false,
-                  onSaved: (value) => {},
-                  decoration: InputDecoration(
-                    filled: true,
-                    labelText: 'Price',
                     labelStyle: const TextStyle(
                       color: Colors.black,
                     ),

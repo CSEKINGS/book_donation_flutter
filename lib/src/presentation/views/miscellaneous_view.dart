@@ -1,13 +1,16 @@
-import 'package:book_donation/utils/common_utils.dart';
-import 'package:book_donation/utils/constants.dart';
-import 'package:book_donation/views/f_a_qs_view.dart';
-import 'package:book_donation/views/login_view.dart';
-import 'package:book_donation/views/widgets/custom_list_tile_icon.dart';
-import 'package:book_donation/views/profile_view.dart';
-import 'package:book_donation/views/settings_view.dart';
+import 'package:book_donation/src/config/common_utils.dart';
+import 'package:book_donation/src/config/constants.dart';
+import 'package:book_donation/src/presentation/views/profile_view.dart';
+import 'package:book_donation/src/presentation/views/settings_view.dart';
+import 'package:book_donation/src/presentation/widgets/custom_list_tile_icon.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'f_a_qs_view.dart';
+import 'login_view.dart';
 
 /// Settings page
 class MiscellaneousView extends StatefulWidget {

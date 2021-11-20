@@ -1,4 +1,5 @@
-import 'package:book_donation/utils/media_query.dart';
+
+import 'package:book_donation/src/config/media_query.dart';
 import 'package:flutter/material.dart';
 
 /// Profile page

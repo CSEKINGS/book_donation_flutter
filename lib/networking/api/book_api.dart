@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:book_donation/models/book.dart';
+
+import 'package:book_donation/src/data/models/book.dart';
 import 'package:http/http.dart' as http;
 
 

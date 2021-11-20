@@ -1,8 +1,10 @@
-import 'package:book_donation/views/dashboard_view.dart';
-import 'package:book_donation/views/map_view.dart';
-import 'package:book_donation/views/miscellaneous_view.dart';
+
+import 'package:book_donation/src/presentation/views/dashboard_view.dart';
+import 'package:book_donation/src/presentation/views/map_view.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+
+import 'miscellaneous_view.dart';
 
 /// The first screen of the app after login.
 /// This shows a navigation bar to navigate to other screen
@@ -19,6 +21,7 @@ class _HomeNavigationViewState extends State<HomeNavigationView> {
   final List<Widget> _children = [
     const DashboardView(),
     const MapView(),
+
     const MiscellaneousView(),
   ];
 
